@@ -173,6 +173,7 @@ export class FlightService {
                          flightMaxCost: number,
                          cityCode: Partial<CityCodeDto>): Flight[] {
         return response[1][4][0]
+            .filter(res => res && res[1] && res[1][0] && res[6])
             .filter(flightResponse => (Number(flightResponse[1][0][1]) < flightMaxCost) && !flightResponse[6][10])
             .map((flightResponse): Flight => {
                 const destination = response[0][3][0].find(d => d[0] === flightResponse[0]);

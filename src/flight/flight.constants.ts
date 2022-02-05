@@ -1,7 +1,7 @@
-import {BannedPlaces} from "../model/banned-places.interface";
-import {Weekend} from "../model/weekend.interface";
-import {Flight} from "../model/flight.interface";
-import {CityCodeDto} from "../model/city-code-dto.interface";
+import { BannedPlaces } from "../model/banned-places.interface";
+import { Weekend } from "../model/weekend.interface";
+import { Flight } from "../model/flight.interface";
+import { CityCodeDto } from "../model/city-code-dto.interface";
 
 export function calculateCoordsMap(latitude: number, longitude: number): number[][] {
     const offsetLatitude = 25;
@@ -31,50 +31,7 @@ export function getFlightsBody(startDay: string,
                                arrivalHours: number[],
                                departHours: number[],
                                cityCode: Partial<CityCodeDto>): any {
-    return [
-        null,
-        calculateCoordsMap(cityCode.geocode[1], cityCode.geocode[0]),
-        null,
-        [
-            null,
-            null,
-            1,
-            null,
-            [],
-            1,
-            [1, 0, 0, 0],
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            [
-                [[[[cityCode.code, 4]]], [[]], arrivalHours, 1, [], [], startDay, [360], [], [], [], null, null],
-                [[[]], [[[cityCode.code, 4]]], departHours, 1, [], [], endDay, [360], [], [], [], null, null]
-            ],
-            null,
-            null,
-            null,
-            true,
-            null,
-            null,
-            null,
-            null,
-            null,
-            [],
-            1,
-            1
-        ],
-        null,
-        1,
-        null,
-        false,
-        true,
-        false,
-        [1407, 857],
-        4
-    ];
+  return [[null, null], calculateCoordsMap(cityCode.geocode[1], cityCode.geocode[0]),                          null, [null, null, 1, null, [], 1, [1, 0, 0, 0], null, null, null, null, null, null, [[[[[cityCode.code, 4]]], [[]], arrivalHours, 1, [], [], startDay,    [360], [], [], [], null, null, []], [[[]], [[[cityCode.code, 4]]], departHours, 1, [], [], endDay,      [360], [], [], [], null, null, []]], null, null, null, true, null, null, null, null, null, [], 1, 1, null, null], null, 1, null, false, true, false, [1407, 857], 4];
 }
 
 export function getGoogleFlightsDetailsBody(flight: Flight, arrivalHours: number[], departHours: number[]): any {
@@ -118,36 +75,50 @@ export function getGoogleFlightsDetailsBody(flight: Flight, arrivalHours: number
 
 // TODO: translate
 export const BANNED_PLACES: BannedPlaces = {
-    countries: [
-        'Poland',
-        // 'United Kingdom',
-        'Ukraine',
-        'Germany',
-        'Portugal',
-        'Belgium',
-        'Hungary',
-        'Austria',
-        // 'Greece',
-        'Latvia',
-        'Slovakia',
-        'Moldova',
-        'France',
-        'United Arab Emirates',
-        'Czechia',
-        'Switzerland',
-        'Luxembourg'
-    ],
-    cities: [
-        // 'London',
-        'Birmingham',
-        'Manchester',
-        'Kaunas',
-        'Palanga',
-        'Athens',
-        'Rome',
-        'Split',
-        'Dubrovnik'
-    ]
+  countries: [
+    'Albania',
+    'Austria',
+    'Belgium',
+    'Bosnia and Herzegovina',
+    'Bulgaria',
+    'Croatia',
+    'Cyprus',
+    'Czechia',
+    'France',
+    'Germany',
+    'Greece',
+    'Hungary',
+    'Iceland',
+    'Ireland',
+    'Italy',
+    'Kosovo',
+    'Latvia',
+    'Luxembourg',
+    'Moldova',
+    'Montenegro',
+    'Netherlands',
+    'North Macedonia',
+    'Poland',
+    'Portugal',
+    'Slovakia',
+    'Slovenia',
+    // 'Spain',
+    'Switzerland',
+    'Ukraine',
+    'United Arab Emirates'
+    // 'United Kingdom',
+  ],
+  cities: [
+    // 'London',
+    'Birmingham',
+    'Manchester',
+    'Kaunas',
+    'Palanga',
+    'Athens',
+    'Rome',
+    'Split',
+    'Dubrovnik'
+  ]
 }
 
 export const FLIGHT_HOURS_DEFAULT: Partial<Weekend> = {
@@ -203,6 +174,6 @@ export function getGoogleFlightsCityCodesOptions(city: string): RequestInit {
 
 export const MS_PER_DAY = 1000 * 3600 * 24;
 
-export const GOOGLE_FLIGHTS_URL = 'https://www.google.com/_/TravelFrontendUi/data/travel.frontend.flights.FlightsFrontendService/GetExploreDestinations?f.sid=-3557253472044563618&bl=boq_travel-frontend-ui_20210106.02_p0&hl=en-US&gl=PL&soc-app=162&soc-platform=1&soc-device=1&_reqid=2181305&rt=c';
+export const GOOGLE_FLIGHTS_URL = 'https://www.google.com/_/TravelFrontendUi/data/travel.frontend.flights.FlightsFrontendService/GetExploreDestinations?f.sid=-7915057360776360349&bl=boq_travel-frontend-ui_20211214.00_p2&hl=pl&soc-app=162&soc-platform=1&soc-device=1&_reqid=449593&rt=c';
 export const GOOGLE_FLIGHTS_DETAILED_URL = 'https://www.google.com/_/TravelFrontendUi/data/travel.frontend.flights.FlightsFrontendService/GetShoppingResults?f.sid=-3542705585279948736&bl=boq_travel-frontend-ui_20210128.01_p0&hl=en-US&gl=PL&soc-app=162&soc-platform=1&soc-device=1&_reqid=5426915&rt=c';
 export const GOOGLE_FLIGHTS_CITY_CODES_URL = 'https://www.google.com/_/TravelFrontendUi/data/batchexecute?rpcids=H028ib&f.sid=14706429958659242&bl=boq_travel-frontend-ui_20210202.01_p0&hl=en-US&gl=PL&soc-app=162&soc-platform=1&soc-device=1&_reqid=1136385&rt=c';
