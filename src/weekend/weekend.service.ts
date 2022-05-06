@@ -14,7 +14,6 @@ export class WeekendService {
         if (isHoliday) {
             return this.buildHolidayWeeks(hours);
         }
-        console.log("Asia chce dac buziaczka Mateuszkowi")
         const today = new Date();
         today.setHours(11);
         const weekends: Weekend[] = [];

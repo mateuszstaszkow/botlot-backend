@@ -22,15 +22,17 @@
   "dependencies": {
     "@nestjs/common": "^6.10.14",
     "@nestjs/core": "^6.10.14",
-    "@nestjs/mongoose": "^7.2.3",
+    "@nestjs/mongoose": "^7.2.4",
     "@nestjs/platform-express": "^6.10.14",
+    "@nestjs/swagger": "^4.8.2",
     "cache-manager": "^3.4.0",
     "form-data": "^3.0.0",
     "inherits": "^2.0.4",
-    "mongoose": "^5.11.17",
+    "mongoose": "^5.13.14",
     "node-fetch": "^2.6.1",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^6.5.4"
+    "rxjs": "^6.5.4",
+    "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^6.13.2",

@@ -26,7 +26,7 @@ jobs:
         npm run build
         cp -r node_modules dist/node_modules
 # TODO: fix node_modules
-# TODO:        npm run test --if-present
+# TODO: npm run test --if-present
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
