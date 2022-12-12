@@ -23,7 +23,7 @@
     "@nestjs/common": "^6.10.14",
     "@nestjs/core": "^6.10.14",
     "@nestjs/mongoose": "^7.2.4",
-    "@nestjs/platform-express": "^6.10.14",
+    "@nestjs/platform-express": "^9.2.1",
     "@nestjs/swagger": "^4.8.2",
     "cache-manager": "^3.4.0",
     "form-data": "^3.0.0",
