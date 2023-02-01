@@ -28,7 +28,7 @@
     "cache-manager": "^3.4.0",
     "form-data": "^3.0.0",
     "inherits": "^2.0.4",
-    "mongoose": "^5.13.14",
+    "mongoose": "^5.13.15",
     "node-fetch": "^2.6.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.4",
